@@ -90,7 +90,9 @@ font-style: normal;
     }
 
     #box_main{
-        background: linear-gradient(to bottom, rgb(45,48,73), rgb(71,84,128));
+        /*background: linear-gradient(to bottom, rgb(45,48,73), rgb(71,84,128));*/
+        background-color: black;
+        transition : background-color 0.5s ease;
     }
     
     .box .front, .box .loading{
@@ -102,13 +104,20 @@ font-style: normal;
         top:0;
         left: 0;
     }
-    
+
+    .loading{
+        opacity: 100%;
+        transition: opacity 1s ease;
+    }
+
     .box .back{
         position: absolute;
         width:100vw;
         max-width: inherit;
         top:-22%;
         left: 0;
+        -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,1) 86%, transparent 95%);
+        mask-image: linear-gradient(to top, rgba(0,0,0,1) 86%, transparent 95%);
     }
 
     .box .goggle{

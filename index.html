@@ -35,7 +35,7 @@
                 <div id="red"></div>
                 <div id="white"></div>
                 <div id="grid">
-                    <video autoplay="true" loop="true" muted="true">
+                    <video autoplay="true" loop="true" muted="true" playsinline>
                         <source src="https://drive.google.com/uc?export=download&id=1aQ7pKRdQ71DMz_wM081n4wOc-RDucUWO" type="video/webm">
                     </video>
                 </div>
@@ -79,10 +79,10 @@
         <!--main-->
        <div class="box" id="box_main">
        <!--background-->
-            <video class="back" autoplay="true" loop="true" muted="true">
+            <video class="back" autoplay="true" loop="true" muted="true" playsinline>
                 <source src="https://drive.google.com/uc?export=download&id=1bmAoPd9xJ-mY7YqThU5l3n8YiuiVNqnJ" type='video/mp4'>
             </video>
-            <video class="front" autoplay="true" loop="true" muted="true">
+            <video class="front" autoplay="true" loop="true" muted="true" playsinline>
                 <source src="https://drive.google.com/uc?export=download&id=1qDq0Z0h5_UVjlZtLNfQcapx5X1B_azhH" type="video/webm">
             </video>
         <!--background-->
@@ -109,16 +109,19 @@
                 
             </div></div>
         <!--contents-->
-            <video class="loading" autoplay="true" muted="true">
-                <source src="https://drive.google.com/uc?export=download&id=1vsAvCOlgtyILxi86zR_Wg6zHMedq652v" type="video/webm">
+            <video class="loading" preload="auto" autoplay="true" muted="true" playsinline>
+                <source src="https://drive.google.com/uc?export=download&id=1NCZ_Q8GCKDd06pVtrDynejag1SGMy9ui" type="video/webm">
             </video>
             <script>
                 var loading = document.querySelector('.loading');
                 loading.addEventListener('ended', (event) => {
-                        loading.remove();
+                        loading.style.opacity = '0%';
+                        loading.addEventListener('transitionend', (event)=>{
+                            loading.remove();
+                        });
                 });
                 loading.addEventListener('timeupdate', (event) => {
-                        if(loading.currentTime >= 10){
+                        if(loading.currentTime >= 3.8){
                             document.querySelector('.logo').style.opacity='100%';
                         }
                 });
