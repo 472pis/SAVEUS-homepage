@@ -32,7 +32,8 @@
         //움직임여부 오케이이면
         if(rand[0]==0){
             //캐릭터 이미지 걷는걸로 바꾸고
-            $(character).children().attr("src", src[id][1]);
+            $(character).children().eq(1).css('display','block');
+            $(character).children().eq(0).css('display','none');
             //현재거리 - 도착 좌표 한 후 절대값 처리 =거리
             var p = Math.abs($(character).position().left-rand[1])*20;
             //현재위치보다 도착좌표가 크면 뒤집고, 작으면 원래대로
@@ -47,7 +48,8 @@
         }else{
             //움직임여부 노노이면
             //멈춤 이미지로 바꾸고
-            $(character).children().attr("src", src[id][0]);
+            $(character).children().eq(0).css('display','block');
+            $(character).children().eq(1).css('display','none');
             //0~2000ms까지 랜덤한 시간동안 대기
             setTimeout(function(){animateRand(character, id);},Math.floor(Math.random()*2000));
         }
@@ -59,7 +61,7 @@
         //chip생성
         for(var i=0; i<src.length; i++){
             $('.chipbox').append(
-                `<div class='chip' id="${i}"><img src="${src[i][0]}" alt=""></div>`
+                `<div class='chip' id="${i}"><img src="${src[i][0]}" alt=""><img src="${src[i][1]}" style="display:none;" alt=""></div>`
             );
         };
         var chips = $('.chip');
