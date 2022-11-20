@@ -9,8 +9,10 @@ let creditbox = document.getElementsByClassName("creditbox")[0];
 let storybox = document.getElementsByClassName("storybox")[0];
 let logo = document.getElementsByClassName("logo")[0];
 let mainbt = document.getElementsByClassName("main_bt")[0];
+let main_box = document.getElementsByClassName("box")[1];
 
 creditbt.onclick = function(){
+    main_box.style.background = "linear-gradient(to bottom, rgb(45,48,73), rgb(71,84,128))";
     front.style.webkitFilter = "blur(0px)";
     back.style.webkitFilter = "blur(0px)";
     logo.style.webkitFilter = "blur(0px)";
