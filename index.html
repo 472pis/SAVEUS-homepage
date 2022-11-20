@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/5f29a57a20.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src ="./gallery/themes/unitegallery.min.js"></script>
+    <script src='./gallery/themes/ug-theme-tilesgrid.js' type='text/javascript'></script>
+    <link rel="stylesheet" href="./gallery/themes/unite-gallery.css">
+    <meta charset="UTF-8">
+    <title>SAVEUS :: SWIFT RESCUE TEAM</title>
+</head>
+<body>
+    <!--container-->
+    <div class="container">
+        <!--top-->
+        <div class="box" id="box_top">
+            <!--main-->
+            <div class="linebox">
+                <img class="line" src="./SVG/line top.svg" alt="">
+                <img src="infinity.svg" alt="">
+            </div>
+            <div class="selectbox">
+                <h1>CHARACTER SELECT</h1>
+            </div>
+            <div class="chipbox">
+                <!--캐릭터랜덤이동-->
+                <!--캐릭터랜덤이동-->
+            </div>
+            <!--main-->
+            <!--contents-->
+            <div class="char_bg">
+                <div id="red"></div>
+                <div id="white"></div>
+                <div id="grid">
+                    <video autoplay="true" loop="true" muted="true">
+                        <source src="./grid.webm" type="video/webm">
+                    </video>
+                </div>
+            </div>
+            <div class="char_box">
+                <!--캐릭터 전신-->
+            </div>
+            <template id="charBox">
+                <div class="char">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+            </template>
+            <div class="char_info_box">
+                <div class="triangle"></div>
+                <div class="namebar2"></div>
+                <div class="namebar"></div>
+                <template id = 'infoBox'>
+                    <div class="char_info hidden">
+                        <div class="name"><h1></h1><h5></h5></div>
+                        <div class="desc_box">
+                            <div class="workposition"><h2></h2><h5></h5></div>
+                            <div class="physical"></div>
+                            <div class="description">
+                                <p></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <!--contents-->
+            <div class="main_cont_bt">V</div>
+        </div>
+        
+        <!--top-->
+    </div>
+    <!--container-->
+    <!--container-->
+    <div class="container">
+        <!--main-->
+       <div class="box" id="box_main">
+       <!--background-->
+            <video class="back" autoplay="true" loop="true" muted="true">
+                <source src="bg.webm" type="video/webm">
+            </video>
+            <video class="front" autoplay="true" loop="true" muted="true">
+                <source src="front.webm" type="video/webm">
+            </video>
+        <!--background-->
+        <!--contents-->
+            <div class="creditbox">
+                <h1 class="maintitle">CREDIT</h1>
+                <h3 class="mainsubtitle">제작자</h3>
+                <div class="profilepic"><img src="pfp.png" alt=""></div>
+                <h3 id="pfpname">이진영</h3>
+                <h5 style="font-weight:lighter; margin-bottom: 2em;">Jinyoung Lee</h5>
+                <p style="font-size: 1.1em;">어떤 분야든 즐겁게 도전하는 아티스트<br>개발, 디자인, 애니메이션을 즐기고 있습니다.</p>
+                <h2 id="contact">CONTACT</h2>
+                <div class="contactbox">
+                    <span><a href="https://twitter.com/472Pis" target='_blank'><i class="fa-brands fa-square-twitter"></i></a></span>
+                    <span><a href="https://www.youtube.com/channel/UCRPRIXyfI1LtORk6ZjfmE2A" target='_blank'><i class="fa-brands fa-youtube"></i></a></span>
+                    <span><a href="https://472pis.github.io/472OC/" target='_blank'><i class="fa-solid fa-house-user"></i></a></span>
+                    <span><a href="mailto:whddlqo170@gmail.com" target='_blank'><i class="fa-solid fa-envelope"></i></a></span>
+                </div>
+            </div>
+            <div class="storybox"><div class="story">
+                <h1 class="maintitle">STORY</h1>
+                <h3 class="mainsubtitle">세계관</h3>
+                <!--story box, for문-->
+                
+            </div></div>
+        <!--contents-->
+            <video class="loading" autoplay="true" muted="true">
+                <source src="intro_loading.webm" type="video/webm">
+            </video>
+            <script>
+                var loading = document.querySelector('.loading');
+                loading.addEventListener('ended', (event) => {
+                        loading.remove();
+                });
+                loading.addEventListener('timeupdate', (event) => {
+                        if(loading.currentTime >= 10){
+                            document.querySelector('.logo').style.opacity='100%';
+                        }
+                });
+            </script>
+            <img class="logo" src="https://i.postimg.cc/NfZ691nN/2.png" alt="">
+        <!--goggle frame-->
+            <img class="line" id="line_top" src="./SVG/line top.svg" alt="">
+            <img class="line" id="line_bottom" src="./SVG/line bottom.svg" alt="">
+            <img class="goggle" id="goggle_top" src="./SVG/goggle top.svg" alt="">
+            <img class="goggle" id="goggle_left" src="./SVG/goggle left.svg" alt="">
+            <img class="goggle" id="goggle_right" src="./SVG/goggle right.svg" alt="">
+            <img class="goggle" id="goggle_bottom" src="./SVG/goggle bottom.svg" alt="">
+        <!--goggle frame-->
+        <!--buttons-->
+            <div class="top_bts">
+                <div class="character_bt">▲<br>CHARACTER</div>
+                <div class="creditbt">▲<br>CREDIT</div>
+            </div>
+            <div class="bottom_bts">
+                <div class="album_bt">▼<br>ALBUM</div>
+                <div class="storybt">▼<br>STORY</div>
+            </div>
+            <div class="main_bt">X</div>
+        <!--buttons-->
+
+        </div>
+        <!--main-->
+
+    </div>
+    <!--container-->   
+        <!--container-->
+        <div class="container">
+            <!--bottom-->
+            
+            <div class="box" id="box_bottom">
+                <div class="main_cont_bt">^</div>
+                <div id="gallery">
+                </div>
+                
+            </div>
+            <!--bottom-->
+        </div>
+        <!--container-->
+</body>
+<!--main js-->
+<script src="./middleScript.js"></script>
+
+<!--top js-->
+<script src="./random_move.js"></script>
+<script src="./makeInfo.js"></script>
+<script src="./topEvent.js"></script>
+
+<!--bottom js-->
+<script src="./gallerymake.js"></script>
+</html>
