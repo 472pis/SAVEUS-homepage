@@ -1,5 +1,6 @@
 //character-slide bt
 let chipBox = document.getElementsByClassName('chipbox')[0];
+let charBt = document.getElementsByClassName('chip');
 let charBg = document.getElementsByClassName('char_bg')[0];
 let mainContBt = document.getElementsByClassName("main_cont_bt")[0];
 let lineBox = document.getElementsByClassName("linebox")[0];
@@ -8,14 +9,12 @@ var info = document.getElementsByClassName("char_info");
 
 //로딩 후 이벤트 리스너 실행
 window.onload = function(){
-    let charBt = document.getElementsByClassName('chip');
     for(var i=0; i<charBt.length; i++){
         charBt[i].addEventListener('click', clickChip);
     }
-}
+};
 
 function clickChip(e){
-    
     var thisId = Number(this.id);
     for(var i=0; i<info.length; i++){
         if(i != thisId){
@@ -30,7 +29,7 @@ function clickChip(e){
     }
     info[thisId].classList.replace('hidden','show');
     charBox.children[thisId].classList.replace('roll','unroll');
-}
+};
 
 function open(){
     charInfo.classList.add('show');
@@ -45,7 +44,7 @@ function open(){
     mainContBt.classList.add('right28');
     mainContBt.removeEventListener('click', pageMove);
     mainContBt.addEventListener('click', close);
-}
+};
 
 function close(){
     charInfo.classList.remove('show');
@@ -61,4 +60,4 @@ function close(){
 
     mainContBt.removeEventListener('click', close);
     mainContBt.addEventListener('click', pageMove);
-}
+};

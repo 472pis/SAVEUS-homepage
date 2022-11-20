@@ -21,9 +21,6 @@ var split = albumImageSrc.split('\n');
             `<img src="${split[i]}" data-image="${split[i]}">`
         );
     }
-
-
-    window.onload = function(){
         $(function(){
             $("#gallery").unitegallery({
                 tile_width:150,
@@ -62,5 +59,4 @@ var split = albumImageSrc.split('\n');
 					tile_image_effect_reverse: false,	//reverce the image, set only on mouseover state
             });
         });
-    };
     
