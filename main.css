@@ -1,16 +1,16 @@
 @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
 @font-face {
 font-family: 'made_soulmazeregular';
-src: url('made_soulmaze_personal_use-webfont.woff2') format('woff2'),
-     url('made_soulmaze_personal_use-webfont.woff') format('woff');
+src: url('./font/made_soulmaze_personal_use-webfont.woff2') format('woff2'),
+     url('./font/made_soulmaze_personal_use-webfont.woff') format('woff');
 font-weight: normal;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'cosmic_blasterregular';
-src: url('cosmic_blaster-webfont.woff2') format('woff2'),
-     url('cosmic_blaster-webfont.woff') format('woff');
+src: url('./font/cosmic_blaster-webfont.woff2') format('woff2'),
+     url('./font/cosmic_blaster-webfont.woff') format('woff');
 font-weight: normal;
 font-style: normal;
 
@@ -18,7 +18,7 @@ font-style: normal;
 
 @font-face {
     font-family: 'cookie-run';
-    src: url('cookierun_bold-webfont.woff') format('woff');
+    src: url('./font/cookierun_bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
