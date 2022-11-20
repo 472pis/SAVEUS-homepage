@@ -17,6 +17,7 @@ window.onload = function(){
 function clickChip(e){
     
     var thisId = Number(this.id);
+    console.log(thisId);
     for(var i=0; i<info.length; i++){
         if(i != thisId){
             if(info[i].classList.contains('show')){
