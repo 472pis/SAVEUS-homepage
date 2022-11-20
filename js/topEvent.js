@@ -1,6 +1,5 @@
 //character-slide bt
 let chipBox = document.getElementsByClassName('chipbox')[0];
-let charBt = document.getElementsByClassName('chip');
 let charBg = document.getElementsByClassName('char_bg')[0];
 let mainContBt = document.getElementsByClassName("main_cont_bt")[0];
 let lineBox = document.getElementsByClassName("linebox")[0];
@@ -9,6 +8,7 @@ var info = document.getElementsByClassName("char_info");
 
 //로딩 후 이벤트 리스너 실행
 window.onload = function(){
+    let charBt = document.getElementsByClassName('chip');
     for(var i=0; i<charBt.length; i++){
         charBt[i].addEventListener('click', clickChip);
     }
@@ -17,7 +17,6 @@ window.onload = function(){
 function clickChip(e){
     
     var thisId = Number(this.id);
-    console.log(thisId);
     for(var i=0; i<info.length; i++){
         if(i != thisId){
             if(info[i].classList.contains('show')){
