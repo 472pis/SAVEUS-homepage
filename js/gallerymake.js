@@ -22,7 +22,6 @@ var split = albumImageSrc.split('\n');
         );
     }
 
-    /*
         $(function(){
             $("#gallery").unitegallery({
                 tile_width:150,
@@ -91,4 +90,3 @@ var split = albumImageSrc.split('\n');
 					lightbox_textpanel_enable_description: false,		//enable the description text
                 });
         });
-    */
