@@ -11,10 +11,11 @@
     }
    
     //칩 넘버
-    var src = [['https://i.postimg.cc/NfZyHFcq/idle2.gif','https://i.postimg.cc/rmyzktSW-/walk2.gif'],
-                ['https://i.postimg.cc/HWXcZfvt/2p-idle2.gif','https://i.postimg.cc/TYcyGn6L/2p-walk2.gif'],
-                ['https://i.postimg.cc/WzGddkqy/idle2.gif','https://i.postimg.cc/m24c080W/walk2.gif'],
-                ['https://i.postimg.cc/bwNZvdy6/idle2.gif','https://i.postimg.cc/Jz6GHmtR/walk2.gif']];
+    var cdn = `https://vfgzkrmpegux14861758.gcdn.ntruss.com/character/`;
+    var src = [['%EB%A6%AC%EB%8B%A4%EB%8F%84%ED%8A%B8-idle2.gif','%EB%A6%AC%EB%8B%A4%EB%8F%84%ED%8A%B8-walk2.gif'],
+                ['2p%EB%8F%84%ED%8A%B8-idle2.gif','2p%EB%8F%84%ED%8A%B8-walk2.gif'],
+                ['%ED%85%8C%EC%8A%A4%EB%8F%84%ED%8A%B8-idle2.gif','%ED%85%8C%EC%8A%A4%EB%8F%84%ED%8A%B8-walk2.gif'],
+                ['%ED%95%98%EB%82%98%EB%8F%84%ED%8A%B8-idle2.gif','%ED%95%98%EB%82%98%EB%8F%84%ED%8A%B8-walk2.gif']];
 
     //최소값 지정 난수 - (Math.random()*max-min+1)+min
     //난수 생성 (움직임 여부/좌표 위치)
@@ -61,7 +62,7 @@
         //chip생성
         for(var i=0; i<src.length; i++){
             $('.chipbox').append(
-                `<div class='chip' id="${i}"><img src="${src[i][0]}" alt=""><img src="${src[i][1]}" style="display:none;" alt=""></div>`
+                `<div class='chip' id="${i}"><img src="${cdn+src[i][0]}" alt=""><img src="${cdn+src[i][1]}" style="display:none;" alt=""></div>`
             );
         };
         var chips = $('.chip');

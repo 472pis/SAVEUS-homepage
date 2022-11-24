@@ -1,6 +1,7 @@
 //character info box
 const charName = ['leada','twop','tes','hana'];
-const charSrc = ['https://i.postimg.cc/Gcncz4w6/image.gif','https://i.postimg.cc/ZTWrPDmw/2P.gif','https://i.postimg.cc/G3tr9YGT/image.gif','https://i.postimg.cc/CSKdfnSN/2.gif'];
+var cdn = `https://vfgzkrmpegux14861758.gcdn.ntruss.com/character/`;
+const charSrc = ['%EB%A6%AC%EB%8B%A4.gif','2P.gif','%ED%85%8C%EC%8A%A4.gif','%ED%95%98%EB%82%982.gif'];
 const names = [['LEADA','리다'],['2P','투피'],['TES','테스'],['HANA','하나']];
 const workPos = [['Team Leader','구조대의 리더'],
                 ['Information Collector  ','정보원'],
@@ -65,8 +66,8 @@ const desc = [
             table[0].children[1].children[2].children[1].innerHTML = desc[i][1];
             
             //charBox
-            table2[0].children[0].setAttribute('src', charSrc[i]);
-            table2[0].children[1].setAttribute('src', charSrc[i]);
+            table2[0].children[0].setAttribute('src', cdn+charSrc[i]);
+            table2[0].children[1].setAttribute('src', cdn+charSrc[i]);
 
             charInfo.appendChild(clone);
             charBox.appendChild(clone2);
