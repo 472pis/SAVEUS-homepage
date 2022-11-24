@@ -18,9 +18,11 @@ var split = albumImageSrc.split('\n');
     for(var i=0; i<split.length; i++){
         gallery.insertAdjacentHTML(
             "beforeend",
-            `<img src="${split[i]}" data-image="${split[i]}">`
+            `<img src="${split[i]}" data-image="${split[i]}" alt="">`
         );
     }
+
+    /*
         $(function(){
             $("#gallery").unitegallery({
                 tile_width:150,
@@ -36,6 +38,7 @@ var split = albumImageSrc.split('\n');
                 gallery_min_width:150,
                 gallery_background_color:"",
 
+                grid_num_rows:100,
                 //tile design options:
 															
 					tile_enable_border:false,			//enable border of the tile				
@@ -44,19 +47,48 @@ var split = albumImageSrc.split('\n');
 					
 					tile_enable_action:	true,			//enable tile action on click like lightbox
 					tile_as_link: false,				//act the tile as link, no lightbox will appear
-					tile_link_newpage: true,			//open the tile link in new page
+					tile_link_newpage: false,			//open the tile link in new page
 		
 					tile_enable_overlay: true,			//enable tile color overlay (on mouseover)
-					tile_overlay_opacity: 0.4,			//tile overlay opacity
+					tile_overlay_opacity: 0.2,			//tile overlay opacity
 					tile_overlay_color: "#000000",		//tile overlay color
 					
-					tile_enable_icons: true,			//enable icons in mouseover mode
+					tile_enable_icons: false,			//enable icons in mouseover mode
 					tile_show_link_icon: false,			//show link icon (if the tile has a link). In case of tile_as_link this option not enabled
-					tile_space_between_icons: 26,		//initial space between icons, (on small tiles it may change)
 					
+					//마우스오버시 흑백
 					tile_enable_image_effect:false,		//enable tile image effect
 					tile_image_effect_type: "bw",		//bw, blur, sepia - tile effect type
 					tile_image_effect_reverse: false,	//reverce the image, set only on mouseover state
-            });
+
+		 			//lightbox options:
+					
+					lightbox_type: "wide",							//compact / wide - lightbox type
+										
+					lightbox_hide_arrows_onvideoplay: true,			//hide the arrows when video start playing and show when stop
+					lightbox_arrows_position: "sides",				//sides, inside: position of the arrows, used on compact type			
+					lightbox_arrows_offset: 50,						//The horizontal offset of the arrows
+		
+					lightbox_overlay_color:null,					//the color of the overlay. if null - will take from css
+					lightbox_overlay_opacity:1,						//the opacity of the overlay. for compact type - 0.6
+					lightbox_top_panel_opacity: null,				//the opacity of the top panel
+					
+					lightbox_close_on_emptyspace:true,				//close the lightbox on empty space
+					
+					lightbox_show_numbers: false,					//show numbers on the right side
+
+				    lightbox_slider_image_border: false,				//enable border around the image (for compact type only)		   
+				    lightbox_slider_image_shadow: false,				//enable border shadow the image
+					
+				    lightbox_slider_control_swipe:false,				//true,false - enable swiping control
+				    lightbox_slider_control_zoom:false,				//true, false - enable zooming control
+				    
+		 			//lightbox text panel:
+					
+					lightbox_show_textpanel: false,						//show the text panel
+					
+					lightbox_textpanel_enable_title: false,				//enable the title text
+					lightbox_textpanel_enable_description: false,		//enable the description text
+                });
         });
-    
+    */
