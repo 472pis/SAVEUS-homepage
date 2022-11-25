@@ -4,12 +4,8 @@
     <script src="https://kit.fontawesome.com/5f29a57a20.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./gallery.css">
     <script  src="https://code.jquery.com/jquery-latest.min.js"></script>
-
-    <script src ="./gallery/themes/unitegallery.js"></script>
-    <script src='./gallery/themes/ug-theme-tilesgrid.js' type='text/javascript'></script>
-    <link rel="stylesheet" href="./gallery/themes/unite-gallery.css">
-    
     <link rel="shortcut icon" href="./image/fab.png">
     <meta charset="UTF-8">
     <meta property="og:type" content="website">
@@ -150,12 +146,26 @@
         <!--container-->
         <div class="container">
             <!--bottom-->
-            
             <div class="box" id="box_bottom">
                 <div class="main_cont_bt">^</div>
-                <div id="gallery">
+                <div id="gallery_top">
+                    <div id="left_arrow"></div>
+                    <div id="right_arrow"></div>
+                    <div id="chapter_box">
+                        <div id="slide_box"></div>
+                    </div>
                 </div>
-                
+                <div id="gallery"></div>
+                <div id="light_box">
+                    <div class="curtain"><img src="https://vfgzkrmpegux14861758.gcdn.ntruss.com/image/curtain.png" alt=""></div>
+                    <div id="imgcontainer">
+                        <img id="expandedImg">
+                    </div>
+                    <div class="curtain"><img src="https://vfgzkrmpegux14861758.gcdn.ntruss.com/image/curtain.png" alt=""></div>
+                    <div class="lightbox_wrap">
+                        <div class="lightbox_list"></div>
+                    </div>
+                </div>
             </div>
             <!--bottom-->
         </div>
@@ -170,7 +180,7 @@
 <script src="./js/topEvent.js"></script>
 
 <!--bottom js-->
-
+<script src="./js/gallerylist.js"></script>
 <script src="./js/gallerymake.js"></script>
 
 </html>

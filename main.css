@@ -37,7 +37,7 @@ font-style: normal;
         overflow: hidden;
     }
     .container{
-        position: absolute;
+        position: fixed;
         width:100vw;
         height: 100vh;
         margin: 0;
@@ -85,14 +85,13 @@ font-style: normal;
         font-size: min(1vw,1.77vh);
     }
 
-    #box_top{
+    #box_top, #box_bottom{
         overflow: visible;
     }
 
     #box_main{
         /*background: linear-gradient(to bottom, rgb(45,48,73), rgb(71,84,128));*/
         background-color: black;
-        transition : background-color 0.5s ease;
     }
     
     .box .front, .box .loading{
@@ -169,6 +168,10 @@ font-style: normal;
         top:10%;
     }
 
+    #box_main .line{
+        opacity:0%;
+    }
+
     .top_bts, .bottom_bts, .main_bt{
         position: absolute;
         width:100%;
@@ -211,7 +214,7 @@ font-style: normal;
         
     }
 
-    .box .back, .box .logo,.creditbox{
+    .box .back, .box .logo,.creditbox, .line{
         transition-property: top, opacity;
         transition-duration: 0.7s;
 
@@ -265,17 +268,17 @@ font-style: normal;
         font-family: 'Galmuri11';
     }
 
-    .story::-webkit-scrollbar-track
+    .story::-webkit-scrollbar-track, #gallery::-webkit-scrollbar-track
     {
         border-radius: 10px;
     }
 
-    .story::-webkit-scrollbar
+    .story::-webkit-scrollbar, #gallery::-webkit-scrollbar
     {
         width: 10px;
     }
 
-    .story::-webkit-scrollbar-thumb
+    .story::-webkit-scrollbar-thumb, #gallery::-webkit-scrollbar-thumb
     {
         border-radius: 10px;
         background-color: rgba(255, 255, 255, 0.3)
@@ -401,6 +404,7 @@ font-style: normal;
         filter: drop-shadow(0px 0px 5px rgba(0, 255, 255, 0.5));
      }
 
+
     .container:first-child .linebox{
         width:100%;
         position:relative;
@@ -520,7 +524,7 @@ font-style: normal;
         left:0;
         margin-left: 5em;
         margin-top:2em;
-    }
+    } 
     .char_box > .leada > img{
         margin:0;
         width:90%;
