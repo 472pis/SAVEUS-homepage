@@ -84,16 +84,20 @@ window.addEventListener('DOMContentLoaded', function()
         let bodySize = document.querySelector('body').offsetWidth/2;
         let offset = document.querySelector('#slide_box').children[3].getBoundingClientRect().left-bodySize+(chapterSize/2);
         let offset2 = document.querySelector('#slide_box').children[10].getBoundingClientRect().left-bodySize+(chapterSize2/2);
-        //원래는 window사이즈 바뀔 때마다 offset 설정 다시 해줘야 함...
         chapter.scrollLeft = offset;
-        
         var chapterIndex = 0;
+  
+  //윈도우 크기 변경하면 버튼 위치 바꿔주는 것 만들었다 실패한 흔적
+  //다 괜찮은데 왜인진 모르겠지만 마지막 인덱스에서 처음 인덱스로 돌아가면 이상한 위치로 가버린다
+  //오프셋 처음 인덱스로 변경 직전에 위치 다시 지정해줘도 똑같음 sad.
+  //이 기능이 없어도 창 크기가 변하면 인덱스 루프시 위치가 이상해진다
+  //모가문제야...
+        
         var timer = null;
         window.addEventListener('resize', function(){
             clearTimeout(timer);
             timer = setTimeout(function(){
                 bodySize = document.querySelector('#box_bottom').offsetWidth/2;
-                console.log(bodySize);
                 chapterSize = slideItems[chapterIndex].getBoundingClientRect().width;
                 offset = document.querySelector('#slide_box').children[chapterIndex+3].offsetLeft-bodySize+(chapterSize/2);
                 chapter.scrollLeft = offset;
@@ -115,6 +119,9 @@ window.addEventListener('DOMContentLoaded', function()
           chapter.scrollLeft += (chapterSize/2)+(newChapSize/2)+gap;
           setTimeout(()=>{
             chapter.style.scrollBehavior = 'unset';
+            bodySize = document.querySelector('#box_bottom').offsetWidth/2;
+            chapterSize = slideItems[chapterIndex].getBoundingClientRect().width;
+            offset = document.querySelector('#slide_box').children[chapterIndex+3].offsetLeft-bodySize+(chapterSize/2);
             chapter.scrollLeft = offset;
             chapter.style.scrollBehavior = 'smooth';
           },500);
@@ -141,6 +148,9 @@ window.addEventListener('DOMContentLoaded', function()
           chapter.scrollLeft -= (chapterSize/2)+(newChapSize/2)+gap;
           setTimeout(()=>{
             chapter.style.scrollBehavior = 'unset';
+            bodySize = document.querySelector('#box_bottom').offsetWidth/2;
+            chapterSize2 = slideItems[slideItems.length-1].getBoundingClientRect().width;
+            offset2 = document.querySelector('#slide_box').children[10].getBoundingClientRect().left-bodySize+(chapterSize2/2);
             chapter.scrollLeft = offset2;
             chapter.style.scrollBehavior = 'smooth';
           },500);
