@@ -11,8 +11,8 @@
     }
    
     //칩 넘버
-    var cdn = `https://vfgzkrmpegux14861758.gcdn.ntruss.com/character/`;
-    var src = [['%EB%A6%AC%EB%8B%A4%EB%8F%84%ED%8A%B8-idle2.gif','%EB%A6%AC%EB%8B%A4%EB%8F%84%ED%8A%B8-walk2.gif'],
+    var chipCdn = `https://vfgzkrmpegux14861758.gcdn.ntruss.com/character/`;
+    var chipSrc = [['%EB%A6%AC%EB%8B%A4%EB%8F%84%ED%8A%B8-idle2.gif','%EB%A6%AC%EB%8B%A4%EB%8F%84%ED%8A%B8-walk2.gif'],
                 ['2p%EB%8F%84%ED%8A%B8-idle2.gif','2p%EB%8F%84%ED%8A%B8-walk2.gif'],
                 ['%ED%85%8C%EC%8A%A4%EB%8F%84%ED%8A%B8-idle2.gif','%ED%85%8C%EC%8A%A4%EB%8F%84%ED%8A%B8-walk2.gif'],
                 ['%ED%95%98%EB%82%98%EB%8F%84%ED%8A%B8-idle2.gif','%ED%95%98%EB%82%98%EB%8F%84%ED%8A%B8-walk2.gif']];
@@ -56,15 +56,17 @@
         }
         
     }
+
+            //chip생성
+            for(var i=0; i<chipSrc.length; i++){
+                $('.chipbox').append(
+                    `<div class='chip' id="${i}"><img src="${chipCdn+chipSrc[i][0]}" alt=""><img src="${chipCdn+chipSrc[i][1]}" style="display:none;" alt=""></div>`
+                );
+            };
+
     
     //로딩완료 후 캐릭터 중앙으로 이동
     $(document).ready(function(){
-        //chip생성
-        for(var i=0; i<src.length; i++){
-            $('.chipbox').append(
-                `<div class='chip' id="${i}"><img src="${cdn+src[i][0]}" alt=""><img src="${cdn+src[i][1]}" style="display:none;" alt=""></div>`
-            );
-        };
         var chips = $('.chip');
         characterSizeW = $('.chip').width();
         //id파악하기

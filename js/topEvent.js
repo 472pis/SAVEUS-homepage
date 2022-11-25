@@ -7,15 +7,6 @@ let lineBox = document.getElementsByClassName("linebox")[0];
 let selectBox = document.getElementsByClassName("selectbox")[0];
 var info = document.getElementsByClassName("char_info");
 
-//로딩 후 이벤트 리스너 실행
-window.addEventListener('DOMContentLoaded', function()
-{
-    for(var i=0; i<charBt.length; i++){
-        charBt[i].addEventListener('click', clickChip);
-    }
-});
-
-
 function clickChip(e){
     var thisId = Number(this.id);
     for(var i=0; i<info.length; i++){
