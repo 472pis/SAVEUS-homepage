@@ -81,7 +81,7 @@ window.addEventListener('DOMContentLoaded', function()
         let chapterSize2 = slideItems[slideItems.length-1].getBoundingClientRect().width;
         let gap = slideItems[1].getBoundingClientRect().left - (slideItems[0].getBoundingClientRect().left + chapterSize);
         
-        const bodySize = document.querySelector('#box_bottom').offsetWidth/2;
+        const bodySize = document.querySelector('body').offsetWidth/2;
         let offset = document.querySelector('#slide_box').children[3].getBoundingClientRect().left-bodySize+(chapterSize/2);
         let offset2 = document.querySelector('#slide_box').children[10].getBoundingClientRect().left-bodySize+(chapterSize2/2);
         
