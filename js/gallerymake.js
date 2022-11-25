@@ -81,12 +81,25 @@ window.addEventListener('DOMContentLoaded', function()
         let chapterSize2 = slideItems[slideItems.length-1].getBoundingClientRect().width;
         let gap = slideItems[1].getBoundingClientRect().left - (slideItems[0].getBoundingClientRect().left + chapterSize);
         
-        const bodySize = document.querySelector('body').offsetWidth/2;
+        let bodySize = document.querySelector('body').offsetWidth/2;
         let offset = document.querySelector('#slide_box').children[3].getBoundingClientRect().left-bodySize+(chapterSize/2);
         let offset2 = document.querySelector('#slide_box').children[10].getBoundingClientRect().left-bodySize+(chapterSize2/2);
-        
+        //원래는 window사이즈 바뀔 때마다 offset 설정 다시 해줘야 함...
         chapter.scrollLeft = offset;
+        
         var chapterIndex = 0;
+        var timer = null;
+        window.addEventListener('resize', function(){
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                bodySize = document.querySelector('#box_bottom').offsetWidth/2;
+                console.log(bodySize);
+                chapterSize = slideItems[chapterIndex].getBoundingClientRect().width;
+                offset = document.querySelector('#slide_box').children[chapterIndex+3].offsetLeft-bodySize+(chapterSize/2);
+                chapter.scrollLeft = offset;
+            }, 300);
+        });
+        
   
       rightArrow.addEventListener('click',function rArr(){
         rightArrow.removeEventListener('click', rArr);
