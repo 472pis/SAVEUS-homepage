@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', function()
             chapter.style.scrollBehavior = 'unset';
             chapter.scrollLeft = offset;
             chapter.style.scrollBehavior = 'smooth';
-          },300);
+          },500);
           
           //스크롤 후 멈추고 다시 돌아감
         }
