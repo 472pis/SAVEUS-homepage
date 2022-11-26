@@ -25,10 +25,10 @@
 
 .lightbox_wrap{
   width:100%;
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
   z-index: 2;
   position: absolute;
-  bottom:0;
+  bottom:-2em;
   transition: bottom 0.5s ease, opacity 0.5s ease;
 }
 
@@ -101,9 +101,9 @@
 }
 
 #gallery_top{
+    flex-shrink: 0;
   width:100%;
   margin-bottom:1em;
-  overflow: hidden;
   padding: 2% 0 2% 0;
   display: flex;
   flex-direction: row;
@@ -150,9 +150,8 @@ flex-shrink: 0;
   align-items: center;
   text-align: center;
   height:10em;
-  max-height:20%;
   width:33em;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 #chapter_box > #slide_box > .chapter > img{
