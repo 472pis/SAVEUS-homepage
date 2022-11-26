@@ -1,6 +1,7 @@
 
   
-      let urlList = [list1, list2];
+      let urlList = [list0, list1, list2, list3, list4, list5, list6, list7];
+      let urlAllList = [allList0 ,allList1 ,allList2 ,allList3 ,allList4 ,allList5 ,allList6 ,allList7]
       
       var cdn = `https://vfgzkrmpegux14861758.gcdn.ntruss.com`;
       const album_src = `/album/`;
