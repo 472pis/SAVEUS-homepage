@@ -1,8 +1,8 @@
 
   
       let urlList = [list0, list1, list2, list3, list4, list5, list6, list7];
-      let urlAllList = [allList0 ,allList1 ,allList2 ,allList3 ,allList4 ,allList5 ,allList6 ,allList7]
-      
+      let urlAllList = [[allList0,allList0_1],allList1,allList2,allList3,allList4,allList5,allList6,allList7]
+
       var cdn = `https://vfgzkrmpegux14861758.gcdn.ntruss.com`;
       const album_src = `/album/`;
       const chapter_src = `/image/chapter/`;
@@ -29,10 +29,12 @@
       let gallery = document.querySelector('#gallery');
   
       for(var k=0; k<urlList.length; k++){
+
         var split = urlList[k].split('\n');
         
         //makegallery//
           for(var i=0; i<split.length; i++){
+            //안합쳐진 사진
               var newItem = document.createElement('div');
               var newImgcont = document.createElement('div');
               var newImg = document.createElement('img');
@@ -41,9 +43,49 @@
               newImg.setAttribute("src",`${split[i]}`);
               newImgcont.appendChild(newImg);
               newItem.appendChild(newImgcont);
-              gallery.appendChild(newItem);
-              
+              gallery.appendChild(newItem);              
           }
+
+          //합쳐진 사진
+          if(urlAllList[k]!=null){
+
+          if(Array.isArray(urlAllList[k]) != true){
+            var split2 = urlAllList[k].split('\n');
+            var newItem = document.createElement('div');
+            newItem.setAttribute("class",`thumbnail album${k}`);
+            var newImgcont = document.createElement('div');
+            newImgcont.setAttribute("class","imgcontainer imgcontainerAll");
+            for(var i=0; i<split2.length; i++){
+              
+              var newImg = document.createElement('img');
+              newImg.setAttribute("src",`${split2[i]}`);
+              newImgcont.appendChild(newImg);
+                      
+            }
+            newItem.appendChild(newImgcont);
+            gallery.appendChild(newItem);
+          }
+          else{
+            for(var l=0; l<urlAllList[k].length; l++){
+              var split2 = urlAllList[k][l].split('\n');
+              var newItem = document.createElement('div');
+              newItem.setAttribute("class",`thumbnail album${k}`);
+              var newImgcont = document.createElement('div');
+              newImgcont.setAttribute("class","imgcontainer imgcontainerAll");
+              for(var i=0; i<split2.length; i++){
+                
+                var newImg = document.createElement('img');
+                newImg.setAttribute("src",`${split2[i]}`);
+                newImgcont.appendChild(newImg);
+                        
+              }
+              newItem.appendChild(newImgcont);
+              gallery.appendChild(newItem);
+            }
+            
+          }
+        }
+          
       };
   //makegallery//
   
@@ -189,6 +231,8 @@ window.addEventListener('DOMContentLoaded', function()
       let lightBox = document.querySelector('#light_box');
       let expandedImg = document.querySelector("#expandedImg");
       let lightBox_list = document.querySelector('.lightbox_list');
+      let imgcontainer = document.querySelector('#imgcontainer');
+      let expandedImgAll = this.document.querySelector('.expandedImgAll'); 
   //addevent
   
       for(var i = 0; i<gallery.children.length; i++){
@@ -203,6 +247,8 @@ window.addEventListener('DOMContentLoaded', function()
   
       function showLightBox()
       { 
+        imgcontainer.innerHTML="";
+
         //누른 아이템 인덱스 번호 가져오기
         var galleryItemIndex = this;
         var i=0;
@@ -213,7 +259,16 @@ window.addEventListener('DOMContentLoaded', function()
         //해당 인덱스 번호 위치 가져오기
         var listItemPos = lightBox_list.children[i].offsetLeft;
         var listItemWidth = lightBox_list.children[i].offsetWidth;
-        expandedImg.src = this.children[0].children[0].src;
+        if(this.children[0].children.length>1){
+          var imgArr = this.children[0].cloneNode(true);
+          imgArr.setAttribute('class','expandedImgAll');
+          imgcontainer.appendChild(imgArr);
+        }else{
+          var imgOne = this.children[0].children[0].cloneNode(true);
+          imgcontainer.appendChild(imgOne)
+          //expandedImg.src = this.children[0].children[0].src;
+        }
+
         if(lightBox.style.visibility == 'visible'){
           lightBox_list.style.left = `calc(50% - ${listItemPos-(listItemWidth/2)+listItemWidth}px)`;
         }
