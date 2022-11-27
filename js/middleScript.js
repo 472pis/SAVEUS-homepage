@@ -107,6 +107,18 @@ for(let i=0; textnum<text.length; i++){
     textnum++;
 };
 
+box.insertAdjacentHTML(
+    "beforeend",
+    `<div class='textbox'>
+        <img src='${cdn}textboxtop.png' alt=''>
+        <div class='text'><span id='textblue' style='font-size:1.1em;font-weight:bold; color:skyblue'>세이브어스는</span><br>
+        <br>내가 만든 세계관이 실제로 게임이 되어,<br>홍보하는 사이트를 만들게 된다면 어떨까?<br>하는 아이디어에서 시작된 프로젝트입니다.
+        <br><br>주로 영상과 이미지로 접할 수 있었던 컨텐츠를<br>웹 개발 전공과 융합하여,<br>단순한 웹 사이트로 끝내지 않고 마치 영상매체를 보는 것처럼, <br>그리고 그 영상매체를 인터랙티브하게 접근할 수 있게 만들어 보았습니다.
+        </div>
+        <img src='${cdn}textboxbottom.png' alt=''>
+    </div>`
+);
+
 
 //pagebt script
 let top_container = document.getElementsByClassName("container")[0];
