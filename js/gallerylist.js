@@ -1,6 +1,12 @@
       //----- img list -----//
       var list0 = `https://i.postimg.cc/vZ7mDSSm/3.png
       https://i.postimg.cc/yYmKT3hQ/3.png
+      https://i.postimg.cc/pdkbLXdB/image.gif
+      https://i.postimg.cc/cHNg0hr3/2P.gif
+      https://i.postimg.cc/nryNPXdn/image.gif
+      https://i.postimg.cc/GhZbW2B8/2.gif
+      https://i.postimg.cc/8kBftJqg/image.gif
+      https://i.postimg.cc/9f7rTrGS/2.png
       https://i.postimg.cc/Y0LV0ZRD/26t.png
       https://i.postimg.cc/hhFYds3D/day-final.png
       https://i.postimg.cc/2jJNYFGX/2p.png
